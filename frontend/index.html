@@ -22,13 +22,16 @@
             </button>
         </form>
         <ul>
-            <li v-for="task in tasks">
-                <div :class="{
-                    'text-success': task.status == true,
-                    'text-danger' : task.status == false
-                    }">
-                    
-                    {{ task.name }}
+            <li v-for="(task, i) in tasks">
+                    <div  @click="change_status(i)" >
+                        <span :class="{
+                            'text-success': task.status == true,
+                            'text-danger' : task.status == false,
+                        }">
+
+                            {{ task.name }}
+
+                        </span>
                 </div>
             </li>
         </ul>

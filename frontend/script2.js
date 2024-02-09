@@ -44,12 +44,19 @@ createApp ({
                 this.tasks = response.data;
                 console.log(response)
             })
-        }
-            
+        },
+        change_status(i){
+            this.tasks[i].status = false;
+            console.log(this.tasks[i].status)
+        },
+
     },
     created(){
         this.call_api();
     },
+    updated(){
+        this.change_status();
+    }
         
         
 }).mount('#app');
