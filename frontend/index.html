@@ -14,8 +14,12 @@
         </h1>
     </header>
     <main class="text-light">
-        <form action="" method="get" >
-            <input type="text" placeholder="inserisci una nuova task">
+        <form action=""  method="get" >
+            <input type="text" v-model="new_task" placeholder="inserisci una nuova task">
+                                <!-- evento che mi scatena la funzione -->
+            <button type="button" @click="add_new_task()">
+                aggiungi tasks
+            </button>
         </form>
         <ul>
             <li v-for="task in tasks">
@@ -35,6 +39,6 @@
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- JS -->
-    <script src="./script.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>
