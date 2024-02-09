@@ -13,8 +13,10 @@
             To-do list Json
         </h1>
     </header>
-    <main class="text-light ">
-        Cose da fare:
+    <main class="text-light">
+        <form action="" method="get" >
+            <input type="text" placeholder="inserisci una nuova task">
+        </form>
         <ul>
             <li v-for="task in tasks">
                 <div :class="{
