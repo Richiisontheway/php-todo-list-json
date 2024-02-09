@@ -14,8 +14,8 @@
         </h1>
     </header>
     <main class="text-light">
-        <form action=""  method="get" >
-            <input type="text" v-model="new_task" placeholder="inserisci una nuova task">
+        <form action="">
+            <input type="text" v-model="new_task" placeholder="inserisci una nuova task" name="name">
                                 <!-- evento che mi scatena la funzione -->
             <button type="button" @click="add_new_task()">
                 aggiungi tasks

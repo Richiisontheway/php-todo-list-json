@@ -13,22 +13,37 @@ createApp ({
     methods: {
         call_api(){
             axios
-            .get ('http://localhost/backend%20Boolean/php-todo-list-json/backend/task.php')
-                .then((response) => {
-                    console.log(response);
-                    this.tasks = response.data;
-                    fast = 'ciao'
-                    console.log(fast,typeof fast)
-                })
+            .post ('http://localhost/backend%20Boolean/php-todo-list-json/backend/task.php',
+            {
+                headers:{'Content-type' : 'multipart/form-data'}
+            }
+            )
+            .then((response) => {
+                this.tasks = response.data;
+                console.log(response)
+            })
         },
         //funzione per pushare dentro l'array ciò che scrivo nell'input
         add_new_task() {
-            this.tasks.push({
-                //chiave & valore voluti da pushare
-                name: this.new_task,
-                status: false
+            // this.tasks.push({
+            //     //chiave & valore voluti da pushare
+            //     name: this.new_task,
+            //     status: false
+            // })
+            // this.new_task = '';
+            axios
+            .post ('http://localhost/backend%20Boolean/php-todo-list-json/backend/newTask.php',
+                {
+                    name: this.new_task
+                },
+                {
+                    headers:{'Content-type' : 'multipart/form-data'}
+                }
+            )
+            .then((response) => {
+                this.tasks = response.data;
+                console.log(response)
             })
-            //this.new_task = '';
         }
             
     },
