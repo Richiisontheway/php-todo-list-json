@@ -14,13 +14,12 @@
         </h1>
     </header>
     <main class="text-light">
-        <form action="">
-            <input type="text" v-model="new_task" placeholder="inserisci una nuova task" name="name">
-                                <!-- evento che mi scatena la funzione -->
-            <button type="button" @click="add_new_task()">
-                aggiungi tasks
-            </button>
-        </form>
+        
+        <input type="text" v-model="new_task" placeholder="inserisci una nuova task" name="name">
+                            <!-- evento che mi scatena la funzione -->
+        <button type="button" @click="add_new_task()">
+            aggiungi tasks
+        </button>
         <ul>
             <li v-for="(task, i) in tasks">
                     <div  @click="change_status(i)" >
