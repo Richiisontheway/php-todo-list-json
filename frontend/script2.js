@@ -34,7 +34,8 @@ createApp ({
             axios
             .post ('http://localhost/backend%20Boolean/php-todo-list-json/backend/newTask.php',
                 {
-                    name: this.new_task
+                    name: this.new_task,
+                    status: false
                 },
                 {
                     headers:{'Content-type' : 'multipart/form-data'}
@@ -46,16 +47,13 @@ createApp ({
             })
         },
         change_status(i){
-            this.tasks[i].status = false;
+            this.tasks[i].status = !this.tasks[i].status;
             console.log(this.tasks[i].status)
-        },
+        }
 
     },
     created(){
         this.call_api();
-    },
-    updated(){
-        this.change_status();
     }
         
         
